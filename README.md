@@ -2,7 +2,7 @@
 -	Launch- Instantiates an ACM and performs a series of function testing.
 -	SubjectCommand- Keeps track of subject ownership and control.
 -	ObjectCommand- Keeps track of object ownership, control, insert/select/delete commands, along with revoke and ownership transfer functions.
-  -	RevokeAll- can revoke a given command (insert/select/delete)
+    -	RevokeAll- can revoke a given command (insert/select/delete)
   -	RevokeSelect- can revoke select
   -	RevokeInsert- can revoke insert
   -	RevokeDelete- can revoke delete
