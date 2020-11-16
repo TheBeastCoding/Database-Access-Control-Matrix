@@ -1,7 +1,7 @@
 # Database-Access-Control-Matrix
 The implemented access control matrix is a hybrid between the Role-Based Access Control and Discretionary Access Control to accept/reject user commands before they reach an SQL server. This is an RBAC model because a given user’s role determines what type of SQL queries and system commands that a user can perform. For example, a regular user can only perform read/write/delete for a given table. A security officer can only perform commit/rollback. An admin can perform all the above and create/drop tables and users. Additionally, they can grant and revoke and transfer if they have control or ownership. This ACM is also a DAC model because the RBAC model sets what a user is maximally allowed to do; however, most users typically start with no rights (except for owners). Rights must be granted, or ownership transferred in order to distribute these rights to other users. This is accomplished via a custom class called a CommandPair. This pair contains if the right is allowed (based on the role), if the right is currently active for a given user, and if the right is transferable to another user (copy flag). The system checks this pairing accordingly.
 
-# DOCMENTATION
+# DOCUMENTATION
 -	Launch- Instantiates an ACM and performs a series of function testing.
 -	SubjectCommand- Keeps track of subject ownership and control.
 -	ObjectCommand- Keeps track of object ownership, control, insert/select/delete commands, along with revoke and ownership transfer functions.
