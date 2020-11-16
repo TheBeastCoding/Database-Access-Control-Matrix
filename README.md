@@ -1,1 +1,41 @@
 # Database-Access-Control-Matrix
+-	Launch- Instantiates an ACM and performs a series of function testing.
+-	SubjectCommand- Keeps track of subject ownership and control.
+-	ObjectCommand- Keeps track of object ownership, control, insert/select/delete commands, along with revoke and ownership transfer functions.
+  -	RevokeAll- can revoke a given command (insert/select/delete)
+  -	RevokeSelect- can revoke select
+  -	RevokeInsert- can revoke insert
+  -	RevokeDelete- can revoke delete
+  -	RemoveOwner- removes ownership
+  -	MakeOwner- makes owner of object
+  -	SetCurrentAndTransferable- Helper function to make all commands (insert/select/delete) currently active and transferable
+  -	PrintCommands- Helper function for printing the ACM
+-	Subject- Keeps track of subject name, password, role, and subject and object command listing.
+-	Role- Enumeration of possible roles- Regular User, Security Officer, Admin, Root
+-	Object- Keeps track of object name and owner
+-	Commands- Enumeration of object (table) commands- Select, Insert, Delete
+-	CommandPair- Keeps track of a given command to see if it is allowed (based on user role), if it is currently active, and if it is transferable to another subject.
+-	ACM- System to keep track of subjects and objects and to accept/reject commands from users before they effect the database.
+  -	displayAllSubjects- Display all subjects on command line.
+  -	displayAllObjects- Display all objects on command line.
+  -	printSubjectACM- Print out ACM related to subjects
+  -	printObjectACM- Print out ACM related to objects.
+  -	getObjectCommand- Return the command listing on a given object for a specific user
+  -	getSubjectCommand- Return command listing on a given subject for a specific user.
+  -	getSubject- Return a given subject class given a username.
+  -	getObject- Return a given object class given a object name.
+  -	verifyObject- Check if object is in system
+  -	verifySubject- Check if subject is in system
+  -	verifyPassword- Check if provided password is valid
+  -	executeTCLCommand- Execute a TCL SQL command (commit/rollback)
+  -	executeObjectCommand- Perform command (select/insert/delete) on a given table
+  -	revokeObjectRights- Revoke all rights from user.
+  -	revokeObjectRights- Revoke a single right from a user.
+  -	transferObjectOwnership- Transfer object ownership.
+  -	transferSubjectOwnership- Transfer subject ownership.
+  -	grantObjectCommand- Grant all rights to user.
+  -	grantObjectCommand- Grant single right to user.
+  -	addSubject- Add a subject (user) to the ACM.
+  -	removeSubject- Remove subject (user) from the ACM.
+  -	addObject- Add object (table) to ACM.
+  -	removeObject- Remove object (table) from ACM.
